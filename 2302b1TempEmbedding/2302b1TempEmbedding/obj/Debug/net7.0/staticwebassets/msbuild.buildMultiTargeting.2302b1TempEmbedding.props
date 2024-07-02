@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\2302b1TempEmbedding.props" />
+</Project>
