@@ -12,8 +12,16 @@ namespace _2302b1TempEmbedding.Controllers
 
         public IActionResult Index()
         {
-            TempData.Keep("email");
-            return View();
+            if (HttpContext.Session.GetString("role") == "user")
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login","Admin");
+            }
+            //TempData.Keep("email");
+            //return View();
         }
 
         public IActionResult About()
