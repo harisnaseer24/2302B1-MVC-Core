@@ -78,5 +78,10 @@ namespace _2302b1TempEmbedding.Controllers
             return RedirectToAction("Login");
 
         }
+
+        public IActionResult AddProduct()
+        {
+            return View();
+        }
     }
 }
