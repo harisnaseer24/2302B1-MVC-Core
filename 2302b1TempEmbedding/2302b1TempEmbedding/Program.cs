@@ -1,9 +1,13 @@
+using _2302b1TempEmbedding.Models;
+
 using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<_2302b1dotnetContext>();
+
 
 builder.Services.AddDistributedMemoryCache();
 

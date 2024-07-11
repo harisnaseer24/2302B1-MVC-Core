@@ -68,9 +68,6 @@ namespace _2302b1TempEmbedding.Controllers
                 return View();
 
             }
-
-
-
         }
 
         public IActionResult Logout()

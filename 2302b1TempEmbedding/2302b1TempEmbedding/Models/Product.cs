@@ -1,19 +1,15 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
 
-namespace _2302b1TempEmbedding.Models
+namespace _2302b1TempEmbedding.Models;
+
+public partial class Product
 {
-    public class Product
-    {
-        [Key]
-        public int Id { get; set; }
+    public int Id { get; set; }
 
-        [Required]
-        public string pname { get; set; }
+    public string Pname { get; set; } = null!;
 
-        [RegularExpression("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$")]
-        public string description { get; set; }
-        [Required]
-        public int price { get; set; }
+    public string Description { get; set; } = null!;
 
-    }
+    public int Price { get; set; }
 }
