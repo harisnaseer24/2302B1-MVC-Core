@@ -11,5 +11,30 @@ namespace _2302b1TempEmbedding.Controllers
         {
             return View(db.Products.ToList());
         }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Product prd)
+        {
+            if (ModelState.IsValid) { 
+            
+                db.Products.Add(prd);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            else
+            {
+
+            return View();
+            }
+        }
+
+
+
     }
 }
