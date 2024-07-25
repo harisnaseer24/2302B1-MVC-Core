@@ -44,10 +44,12 @@
                 @Html.DisplayFor(modelItem => item.Price)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Image)
+                    <img src="@Html.DisplayFor(modelItem => item.Image)" class="rounded-circle" height="65">
+                    @* <img src="@Html.DisplayFor(modelItem => item.Image)"> *@
+               
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Cat.CatId)
+                @Html.DisplayFor(modelItem => item.Cat.CatName)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

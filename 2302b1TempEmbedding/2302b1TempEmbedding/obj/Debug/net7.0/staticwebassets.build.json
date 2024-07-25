@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "d3m+qrOW+yi+BJQjNp4f/puvHtmVrbYA66t36Jzx6CI=",
+  "Hash": "gt+ZfNJns9iBBfwwJDUL+gV0+FYiRYsC1UmJjmK/GUM=",
   "Source": "2302b1TempEmbedding",
   "BasePath": "_content/2302b1TempEmbedding",
   "Mode": "Default",
@@ -4061,6 +4061,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\scss\\bootstrap\\scss\\vendor\\_rfs.scss"
+    },
+    {
+      "Identity": "C:\\Users\\harisnaseer\\OneDrive\\Desktop\\Haris Naseer\\3RD SEMESTER\\2302B1 .Net\\2302b1TempEmbedding\\2302b1TempEmbedding\\wwwroot\\uploads\\240323100349product-1.jpg",
+      "SourceId": "2302b1TempEmbedding",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\harisnaseer\\OneDrive\\Desktop\\Haris Naseer\\3RD SEMESTER\\2302B1 .Net\\2302b1TempEmbedding\\2302b1TempEmbedding\\wwwroot\\",
+      "BasePath": "_content/2302b1TempEmbedding",
+      "RelativePath": "uploads/240323100349product-1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\240323100349product-1.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\harisnaseer\\OneDrive\\Desktop\\Haris Naseer\\3RD SEMESTER\\2302B1 .Net\\2302b1TempEmbedding\\2302b1TempEmbedding\\wwwroot\\uploads\\240523100556product-7.jpg",
+      "SourceId": "2302b1TempEmbedding",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\harisnaseer\\OneDrive\\Desktop\\Haris Naseer\\3RD SEMESTER\\2302B1 .Net\\2302b1TempEmbedding\\2302b1TempEmbedding\\wwwroot\\",
+      "BasePath": "_content/2302b1TempEmbedding",
+      "RelativePath": "uploads/240523100556product-7.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\240523100556product-7.jpg"
     }
   ]
 }

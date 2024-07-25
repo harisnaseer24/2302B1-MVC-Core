@@ -949,6 +949,14 @@
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\vendor\\_rfs.scss"
     },
     {
+      "Id": "C:\\Users\\harisnaseer\\OneDrive\\Desktop\\Haris Naseer\\3RD SEMESTER\\2302B1 .Net\\2302b1TempEmbedding\\2302b1TempEmbedding\\wwwroot\\uploads\\240323100349product-1.jpg",
+      "PackagePath": "staticwebassets\\uploads\\240323100349product-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\harisnaseer\\OneDrive\\Desktop\\Haris Naseer\\3RD SEMESTER\\2302B1 .Net\\2302b1TempEmbedding\\2302b1TempEmbedding\\wwwroot\\uploads\\240523100556product-7.jpg",
+      "PackagePath": "staticwebassets\\uploads\\240523100556product-7.jpg"
+    },
+    {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.2302b1TempEmbedding.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
