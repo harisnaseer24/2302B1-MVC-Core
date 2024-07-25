@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "gt+ZfNJns9iBBfwwJDUL+gV0+FYiRYsC1UmJjmK/GUM=",
+  "Hash": "8iy7FKpzmQ1v0IlJUl/MCm9LQT8vxBQ7bG6EM2uSGJM=",
   "Source": "2302b1TempEmbedding",
   "BasePath": "_content/2302b1TempEmbedding",
   "Mode": "Default",
@@ -4095,6 +4095,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\240523100556product-7.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\harisnaseer\\OneDrive\\Desktop\\Haris Naseer\\3RD SEMESTER\\2302B1 .Net\\2302b1TempEmbedding\\2302b1TempEmbedding\\wwwroot\\uploads\\241523101525product-6.jpg",
+      "SourceId": "2302b1TempEmbedding",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\harisnaseer\\OneDrive\\Desktop\\Haris Naseer\\3RD SEMESTER\\2302B1 .Net\\2302b1TempEmbedding\\2302b1TempEmbedding\\wwwroot\\",
+      "BasePath": "_content/2302b1TempEmbedding",
+      "RelativePath": "uploads/241523101525product-6.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\241523101525product-6.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\harisnaseer\\OneDrive\\Desktop\\Haris Naseer\\3RD SEMESTER\\2302B1 .Net\\2302b1TempEmbedding\\2302b1TempEmbedding\\wwwroot\\uploads\\241623101630product-3.jpg",
+      "SourceId": "2302b1TempEmbedding",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\harisnaseer\\OneDrive\\Desktop\\Haris Naseer\\3RD SEMESTER\\2302B1 .Net\\2302b1TempEmbedding\\2302b1TempEmbedding\\wwwroot\\",
+      "BasePath": "_content/2302b1TempEmbedding",
+      "RelativePath": "uploads/241623101630product-3.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\241623101630product-3.jpg"
     }
   ]
 }

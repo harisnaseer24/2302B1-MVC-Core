@@ -54,5 +54,53 @@ namespace _2302b1TempEmbedding.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var item = db.Items.Find(id);
+            if (item == null)
+            {
+                return RedirectToAction("index");
+            }
+            else
+            {
+                ViewBag.CatId = new SelectList(db.Categories, "CatId", "CatName");
+                return View(item);
+            }
+       
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(Item item, IFormFile file, string oldImage)
+        {
+            var dbimage="";
+            if (file != null && file.Length > 0)
+            { string imageName = DateTime.Now.ToString("yymmddhhmmss");//6432647443473
+                imageName += Path.GetFileName(file.FileName);//6432647443473apple.jpg
+                var imagepath = Path.Combine(HttpContext.Request.PathBase.Value, "wwwroot/uploads");
+                var imageValue = Path.Combine(imagepath, imageName);
+                using (var stream = new FileStream(imageValue, FileMode.Create))
+                {
+                    file.CopyTo(stream);
+                }
+                dbimage = Path.Combine("/uploads", imageName);
+                item.Image = dbimage;
+                db.Items.Update(item);
+                db.SaveChanges();
+            }
+            else
+            {
+                item.Image = oldImage;
+                db.Items.Update(item);
+                db.SaveChanges();
+            }
+
+            ViewBag.CatId = new SelectList(db.Categories, "CatId", "CatName");
+            return RedirectToAction("Index");
+        }
+
+
+
     }
 }
