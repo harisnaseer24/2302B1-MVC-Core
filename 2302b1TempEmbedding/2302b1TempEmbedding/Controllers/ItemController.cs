@@ -101,6 +101,34 @@ namespace _2302b1TempEmbedding.Controllers
         }
 
 
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            var item = db.Items.Find(id);
+            if (item == null)
+            {
+
+                return RedirectToAction("index");
+            }
+            else
+            {
+              
+                return View(item);
+            }
+
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Delete(Item item)
+        {
+          
+                db.Items.Remove(item);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+        }
+
+
 
     }
 }
