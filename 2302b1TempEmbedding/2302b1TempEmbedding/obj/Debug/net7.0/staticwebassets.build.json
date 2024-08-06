@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "rVOpy7KrD4OSolCEubp2qBS7YdL+0RPd008qCMxDMrk=",
+  "Hash": "4/GofFgm/1i31lqhcide9RTH+MSPUXtgP6HgCnw3kaU=",
   "Source": "2302b1TempEmbedding",
   "BasePath": "_content/2302b1TempEmbedding",
   "Mode": "Default",
@@ -4146,6 +4146,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\244725094749product-6.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\harisnaseer\\OneDrive\\Desktop\\Haris Naseer\\3RD SEMESTER\\2302B1 .Net\\2302b1TempEmbedding\\2302b1TempEmbedding\\wwwroot\\uploads\\245330095326product-4.jpg",
+      "SourceId": "2302b1TempEmbedding",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\harisnaseer\\OneDrive\\Desktop\\Haris Naseer\\3RD SEMESTER\\2302B1 .Net\\2302b1TempEmbedding\\2302b1TempEmbedding\\wwwroot\\",
+      "BasePath": "_content/2302b1TempEmbedding",
+      "RelativePath": "uploads/245330095326product-4.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\245330095326product-4.jpg"
     }
   ]
 }

@@ -969,6 +969,10 @@
       "PackagePath": "staticwebassets\\uploads\\244725094749product-6.jpg"
     },
     {
+      "Id": "C:\\Users\\harisnaseer\\OneDrive\\Desktop\\Haris Naseer\\3RD SEMESTER\\2302B1 .Net\\2302b1TempEmbedding\\2302b1TempEmbedding\\wwwroot\\uploads\\245330095326product-4.jpg",
+      "PackagePath": "staticwebassets\\uploads\\245330095326product-4.jpg"
+    },
+    {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.2302b1TempEmbedding.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

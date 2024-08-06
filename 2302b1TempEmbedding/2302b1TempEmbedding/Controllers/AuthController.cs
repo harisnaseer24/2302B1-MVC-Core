@@ -1,15 +1,54 @@
 ﻿using System.Security.Claims;
 
+using _2302b1TempEmbedding.Models;
+
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace _2302b1TempEmbedding.Controllers
 {
     public class AuthController : Controller
     {
+        private readonly _2302b1dotnetContext db;
+
+        public AuthController(_2302b1dotnetContext _db)
+        {
+            db = _db;
+        }
+
+        public IActionResult Signup()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Signup(User user)
+        {
+            var checkUser = db.Users.FirstOrDefault(u => u.Email == user.Email);
+            if (checkUser ==null)
+            {
+                var hasher = new PasswordHasher<string>();
+                var hashPassword = hasher.HashPassword(user.Email, user.Password);
+                user.Password = hashPassword;
+                db.Users.Add(user);
+                db.SaveChanges();
+                return RedirectToAction("Login");
+            }
+            else
+            {
+                ViewBag.msg = "User already registered. Please login.";
+                return View();
+            }
+
+            
+        }
+
+
         public IActionResult Login()
         {
+
             return View();
         }
 
