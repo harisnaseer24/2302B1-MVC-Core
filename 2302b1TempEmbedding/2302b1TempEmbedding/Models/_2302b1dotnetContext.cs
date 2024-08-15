@@ -15,6 +15,8 @@ public partial class _2302b1dotnetContext : DbContext
     {
     }
 
+    public virtual DbSet<Cart> Carts { get; set; }
+
     public virtual DbSet<Category> Categories { get; set; }
 
     public virtual DbSet<Item> Items { get; set; }
@@ -29,6 +31,23 @@ public partial class _2302b1dotnetContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<Cart>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__Cart__3214EC07ACBB7621");
+
+            entity.ToTable("Cart");
+
+            entity.HasOne(d => d.Item).WithMany(p => p.Carts)
+                .HasForeignKey(d => d.ItemId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_Cart_ToItem");
+
+            entity.HasOne(d => d.User).WithMany(p => p.Carts)
+                .HasForeignKey(d => d.UserId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_Cart_ToUser");
+        });
+
         modelBuilder.Entity<Category>(entity =>
         {
             entity.HasKey(e => e.CatId).HasName("PK__Categori__6A1C8AFAC8F7DDC4");

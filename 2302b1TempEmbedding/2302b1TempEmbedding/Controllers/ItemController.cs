@@ -1,10 +1,13 @@
 ﻿using _2302b1TempEmbedding.Models;
+
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 namespace _2302b1TempEmbedding.Controllers
 {
+    [Authorize (Roles ="Admin")]
     public class ItemController : Controller
     {
         //_2302b1dotnetContext db = new _2302b1dotnetContext();

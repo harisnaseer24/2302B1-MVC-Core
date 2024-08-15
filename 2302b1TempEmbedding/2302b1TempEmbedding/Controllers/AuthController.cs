@@ -4,6 +4,7 @@ using _2302b1TempEmbedding.Models;
 
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -42,7 +43,6 @@ namespace _2302b1TempEmbedding.Controllers
                 return View();
             }
 
-            
         }
 
 
@@ -55,62 +55,89 @@ namespace _2302b1TempEmbedding.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
   
-        public IActionResult Login(string email, string password)
+        public IActionResult Login(User user)
         {
             bool IsAuthenticated = false;
-            bool IsAdmin = false;
+          
             ClaimsIdentity identity = null;
-
-            if (email == "admin@gmail.com" && password == "123")
+            string controller = "";
+            var checkUser = db.Users.FirstOrDefault(u => u.Email == user.Email);
+            if (checkUser != null)
             {
-                identity = new ClaimsIdentity(new[]
+                var hasher = new PasswordHasher<string>();
+                var verifyPass = hasher.VerifyHashedPassword(user.Email, checkUser.Password, user.Password);
+                if (verifyPass == PasswordVerificationResult.Success && checkUser.RoleId == 1)
+                {
+                    identity = new ClaimsIdentity(new[]
                  {
-                    new Claim(ClaimTypes.Name ,"Haris"),
+                    new Claim(ClaimTypes.Name ,checkUser.Username),
                     new Claim(ClaimTypes.Role ,"Admin"),
-                    
+
                 }
                 , CookieAuthenticationDefaults.AuthenticationScheme);
-                IsAuthenticated = true;
-                IsAdmin = true;
-            }
-            else if (email == "user@gmail.com" && password == "123")
-            {
-                identity = new ClaimsIdentity(new[]
-                  {
-                    new Claim(ClaimTypes.Name ,"User1"),
-                    new Claim(ClaimTypes.Role ,"USer"),
+                    IsAuthenticated = true;
+                    controller = "Admin";
+
+                    HttpContext.Session.SetInt32("UserID", checkUser.Id);
+                    HttpContext.Session.SetString("UserEmail", checkUser.Email);
 
                 }
-                 , CookieAuthenticationDefaults.AuthenticationScheme);
-                IsAuthenticated = true;
-                IsAdmin = false;
-              
-            }
-           
-            if(IsAuthenticated && IsAdmin)
-            {
-                var principal = new ClaimsPrincipal(identity);
+                else if (verifyPass == PasswordVerificationResult.Success && checkUser.RoleId == 2)
+                {
+                    identity = new ClaimsIdentity(new[]
+              {
+                    new Claim(ClaimTypes.Name ,checkUser.Username),
+                    new Claim(ClaimTypes.Role ,"User"),
 
-                var login = HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
+                }
+             , CookieAuthenticationDefaults.AuthenticationScheme);
+                    IsAuthenticated = true;
+                    controller = "Home";
+                    HttpContext.Session.SetInt32("UserID", checkUser.Id);
+                    HttpContext.Session.SetString("UserEmail", checkUser.Email);
 
-                return RedirectToAction("Index", "Admin");
-            }
-            else if (IsAuthenticated)
-            {
-                var principal = new ClaimsPrincipal(identity);
+                }
+                else
+                {
+                    ViewBag.msg = "Invalid Credentials";
+                    return View();
+                }
 
-                var login = HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
-                return RedirectToAction("Index", "Home");
+
+                if (IsAuthenticated)
+                {
+                    var principal = new ClaimsPrincipal(identity);
+
+                    var login = HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
+
+                    return RedirectToAction("Index", controller);
+                }
+                else
+                {
+                    ViewBag.msg = "Lgoin Failed";
+                    return View();
+
+                }
             }
+
             else
             {
+                ViewBag.msg = "Invalid User";
                 return View();
+            }
+            
+
 
             }
-        }
+           
+          
+        
 
         public IActionResult Logout()
         {
+            HttpContext.Session.Remove("UserID");
+            HttpContext.Session.Remove("UserEmail");
+
             var login = HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return RedirectToAction("Login", "Auth");
         }
